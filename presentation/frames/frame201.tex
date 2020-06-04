@@ -1,0 +1,19 @@
+\begin{frame}
+    \frametitle{Grundlegende Definitionen}
+    Sei $S$ eine endliche Menge und $U \subseteq P(S)$ Familie von Teilmengen.
+\onslide<2->{
+    \begin{definition}
+        Das Paar $M = \left( S, U \right) $ heißt \textbf{Matroid} und $U$ die Familie der \textbf{unabhängigen Mengen} von $M$, wenn gilt:
+        \begin{enumerate}[1]
+        		\item	$\emptyset \in U$
+        		\item 	$A \in U, B \subseteq A  \implies B \in U$
+        		\item 	$A, B \in U, \ \# B = \# A + 1 \implies \exists v\in B \setminus A \ \text{mit} \ A \cup \{ v\} \in U$
+        \end{enumerate}
+    \end{definition}
+}
+\onslide<3->{
+    \begin{definition}
+        Eine maximale unabhängige Menge heißt eine \textbf{Basis} des Matroids. Alle Basen enthalten die gleiche Anzahl von Elementen, der \textbf{Rang} $r(M)$ des Matroids.
+    \end{definition}
+}
+\end{frame}

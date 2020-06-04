@@ -1,0 +1,35 @@
+\begin{frame}
+\frametitle{Matroide und Vektorräume}
+
+\only<1,2,3,4,5> {
+				Begriffsverwandtschaft mit Matrix:
+				\begin{itemize}
+					\item<2-> 	$S \cong$ Menge der Spaltenvektoren einer Matrix.
+					\item<3-> 	$U \cong$ Menge der linear unabhängigen Systeme bestehend aus Vektoren $\in S$.
+					\item<4-> 	Basis $\cong$ maximal linear unabhängiges System (Basis des Bildes der Matrix).
+					\item<5->	Rang $\cong$ Anzahl der Vektoren einer Basis, Rang der Matrix.
+				\end{itemize}
+}
+
+\only<6> {
+	\begin{columns}
+		\column{0.50\textwidth}
+			$$ \begin{pmatrix}
+				1 & 0 & 0 & 1 \\ 0  & 1 & 0 & 1   \\ 0 & 0 & 1 & 0 
+			\end{pmatrix}$$
+			\begin{align*}
+				U  = &  \{ \emptyset, \{a\}, \{b\}, \{c\}, \{d\}, \{a,b\},\\
+				 &  \{a,c\}, \{a,d\}, \{b,c\}, \{b,d\}, \{c,d\}, \\
+				 &  \{a,b,c\}, \{a,c,d\}, \{b,c,d\} \} 
+			\end{align*}
+		\column{0.50\textwidth}
+			\begin{align*}
+				 S  = &  \{ \overbrace{\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}}^{a}, \overbrace{\begin{pmatrix} 0\\1\\0 \end{pmatrix}}^{b}, \overbrace{\begin{pmatrix} 0\\0\\1 \end{pmatrix}}^{c}, \overbrace{\begin{pmatrix} 1\\1\\0 \end{pmatrix} }^{d} \}\\
+				 \hfill \\
+				 & \underline{e} = \{a,b,c\} \\
+				 & \operatorname{rang}(S,U) =  \ 3 
+			\end{align*}
+	\end{columns}
+}
+
+\end{frame}

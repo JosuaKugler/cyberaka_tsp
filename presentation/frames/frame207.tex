@@ -1,0 +1,12 @@
+\begin{frame}
+    \frametitle{Algorithmus von Prim}
+    \begin{algorithm}
+        \alginout{zusammenhängender, gewichteter Graph $G = (V,E)$, Funktion $w : E \rightarrow \mathbb{R}$, Startknoten $v \in V$}{minimaler Spannbaum $G'(V,E')$ von $G$}
+        \begin{algtab}
+        		$V' = \{ v\}$ \\
+            \algwhile{$|V'| < |V|$}
+            		betrachte Kante $e \in \{(w, u)| w\in V', u \notin V'\}$ mit minimalem Gewicht\\
+                    $E = E\setminus\{e\}, E' = E'\cup \{e\}, V' = V' \cup \{u\}$
+        \end{algtab}
+    \end{algorithm}
+\end{frame}

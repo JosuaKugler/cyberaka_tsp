@@ -1,0 +1,105 @@
+\begin{frame}
+
+\frametitle{Das Matroid $M=(V,W)$}
+\begin{columns}
+	\column{0.3\textwidth}
+\begin{figure}
+	\begin{tikzpicture}[scale=1.0, auto,swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(0,1)/b}, {(1,0)/c}}
+        \node[vertex] (\name) at \pos {$\name$};
+        
+    \foreach \source/ \dest /\weight in {a/b/1, b/c/2,c/a/4}
+        \path[edge] (\source) -- node[font=\small] {} (\dest);
+    
+        
+	\end{tikzpicture}
+\end{figure}
+\begin{figure}
+	\begin{tikzpicture}[scale=1.0, auto,swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(0,1)/b}, {(1,0)/c}}
+        \node[vertex] (\name) at \pos {$\name$};
+        
+    \foreach \source/ \dest /\weight in {a/b/1, c/a/4}
+        \path[edge] (\source) -- node[font=\small] {} (\dest);
+    
+        
+	\end{tikzpicture}
+\end{figure}
+\begin{figure}
+	\begin{tikzpicture}[scale=1.0, auto,swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(0,1)/b}, {(1,0)/c}}
+        \node[vertex] (\name) at \pos {$\name$};
+        
+    \foreach \source/ \dest /\weight in { b/c/2,c/a/4}
+        \path[edge] (\source) -- node[font=\small] {} (\dest);
+    
+        
+	\end{tikzpicture}
+\end{figure}
+	
+	
+	\column{0.3\textwidth}
+\begin{figure}
+	\begin{tikzpicture}[scale=1.0, auto,swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(0,1)/b}, {(1,0)/c}}
+        \node[vertex] (\name) at \pos {$\name$};
+        
+    \foreach \source/ \dest /\weight in {a/b/1, b/c/2}
+        \path[edge] (\source) -- node[font=\small] {} (\dest);
+    
+        
+	\end{tikzpicture}
+\end{figure}
+\begin{figure}
+	\begin{tikzpicture}[scale=1.0, auto,swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(0,1)/b}, {(1,0)/c}}
+        \node[vertex] (\name) at \pos {$\name$};
+        
+    \foreach \source/ \dest /\weight in {a/b/1}
+        \path[edge] (\source) -- node[font=\small] {} (\dest);
+    
+        
+	\end{tikzpicture}
+\end{figure}
+\begin{figure}
+	\begin{tikzpicture}[scale=1.0, auto,swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(0,1)/b}, {(1,0)/c}}
+        \node[vertex] (\name) at \pos {$\name$};
+        
+    \foreach \source/ \dest /\weight in {b/c/2}
+        \path[edge] (\source) -- node[font=\small] {} (\dest);
+    
+        
+	\end{tikzpicture}
+\end{figure}
+
+
+
+
+	\column{0.30\textwidth}
+
+\begin{figure}
+	\begin{tikzpicture}[scale=1.0, auto,swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(0,1)/b}, {(1,0)/c}}
+        \node[vertex] (\name) at \pos {$\name$};
+        
+    \foreach \source/ \dest /\weight in {c/a/4}
+        \path[edge] (\source) -- node[font=\small] {} (\dest);
+    
+        
+	\end{tikzpicture}
+\end{figure}
+\begin{figure}
+	\begin{tikzpicture}[scale=1.0, auto,swap]
+    \foreach \pos/\name in {{(0,0)/a}, {(0,1)/b}, {(1,0)/c}}
+        \node[vertex] (\name) at \pos {$\name$};
+    
+        
+	\end{tikzpicture}
+\end{figure}
+
+\end{columns}
+
+
+
+\end{frame}

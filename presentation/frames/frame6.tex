@@ -1,0 +1,14 @@
+\begin{frame}
+    \frametitle{Tiefensuche}
+    \begin{algorithm}
+        \alginout{ungewichteter, zusammenhängender Graph $G = (V,E)$,  Startknoten $v\in V$}{aufspannender Baum von $G$}
+        \begin{algtab}
+            Markiere $v$.\\
+            \algwhile{$\exists$ unmarkierte Knoten}
+                \algif{$\exists$ unmarkierte Kanten $e = (v,w)$}
+                    \algifthenelse{$w$  markiert}{entferne $e$ aus $G$.}{markiere $e$ und $w$. Setze $v = w$.}
+                \algelse
+                    Setze $v$ auf den zuletzt markierten Knoten.    
+        \end{algtab}
+    \end{algorithm}
+\end{frame}

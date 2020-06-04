@@ -1,0 +1,30 @@
+\begin{frame}[t]
+ 	\frametitle{Der Satz von Cayley}
+\only<1-2> {   
+	Sei ein $G=(E,K)$ ein vollständiger Graph ($n$ Konten und $\binom{n}{2}$ Kanten). Sei $t(n)$ die Anzahl und $T$ die Menge der aufspannenden Bäume. Seien die Konten von $G$ von $1$ bis $n$ durchnummeriert.
+}
+
+\only<2-4>{
+    \begin{theorem}
+    		Es gilt: $t(n) = n^{n-2}$.
+    \end{theorem}
+}
+\onslide<3->{
+	\begin{proof}
+		\begin{itemize}	
+			\item<3->	Abb: $T \xrightarrow{\sim } \text{Menge der} \ (n-2) \ \text{-Tupel, Einträge aus} \ \{ 1,...,n\}$.
+			\item<4->	Zuordnung durch Prüfer-Code
+			\item<5-> 	\begin{enumerate}[1]
+							\item 	Finde Knoten Grad $1$ mit minimaler Nummer $v$. Nachbar von $v$ ist $a_{1}$.
+							\item 	Entferne $v$ und indizierte Kante. Gehe zu (1), führe $n-2$ mal aus. Gesuchtes Tupel ist $ ( a_{1},...,a_{n-2})$.
+						\end{enumerate}
+			
+			\item<6->	\begin{enumerate}[1]
+							\item 	Suche minimales $b_{1}$ nicht in $ ( a_{1},...,a_{n-2})$. Dies ergibt Kante $b_{1}a_{1}$.
+							\item 	Suche das minimale $b_{2} \neq b_{1}$ nicht in $ ( a_{2},...,a_{n-2})$, usw.
+						\end{enumerate}
+		\end{itemize}
+	\end{proof}
+}
+
+\end{frame}    

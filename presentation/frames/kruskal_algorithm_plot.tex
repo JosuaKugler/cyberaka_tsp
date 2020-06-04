@@ -1,0 +1,54 @@
+%visualizegraphalgorithm("kruskal",
+%       "kruskal_plot", 
+%       ["a", "b", "c", "d", "e"], 
+%       [
+%       ("a", "b", 1), 
+%       ("b", "c", 2), 
+%       ("a", "c", 1), 
+%       ("e", "d", 2), 
+%       ("a", "e", 3), 
+%       ("c", "e", 3),
+%       ("e", "a", 5)
+%], 0.75)
+%END
+\begin{frame}
+    \begin{columns}[T] % align columns
+        \begin{column}{.36\textwidth}
+\only<1>{
+\input{kruskal_plot/graph0.tex}
+}
+\only<2>{
+\input{kruskal_plot/graph1.tex}
+}
+\only<3>{
+\input{kruskal_plot/graph2.tex}
+}
+\only<4>{
+\input{kruskal_plot/graph3.tex}
+}
+\only<5>{
+\input{kruskal_plot/graph4.tex}
+}
+\end{column}%
+\hfill%
+\begin{column}{.62\textwidth}
+    \only<1>{
+        \begin{algorithm}
+            \begin{algtab*}
+                    $G' = (V, \textcolor{red}{\emptyset})$
+            \end{algtab*}
+        \end{algorithm}
+        }
+        \only<2->{
+            \begin{algorithm}
+                \begin{algtab*}
+                    \algwhile{$|\textcolor{red}{E'}| < |V| - 1$}
+                    betrachte Kante $e$ aus $G$ mit $$w(e) = \min\limits_{e \in E}w(e),$$ Setze $$E = E\setminus\{e\}$$\\
+                    \algif{$G'$ mit $e$ azyklisch}
+                    $$\textcolor{red}{E'} = \textcolor{red}{E'}\cup\{\textcolor{red}{e}\}$$
+                \end{algtab*}
+            \end{algorithm}
+        }
+    \end{column}%
+\end{columns}
+\end{frame}

@@ -1,0 +1,42 @@
+\begin{frame}
+    \begin{columns}[T] % align columns
+        \begin{column}{.36\textwidth}
+\only<1>{
+\input{kruskal_plot/graph0.tex}
+}
+\only<2>{
+\input{kruskal_plot/graph1.tex}
+}
+\only<3>{
+\input{kruskal_plot/graph2.tex}
+}
+\only<4>{
+\input{kruskal_plot/graph3.tex}
+}
+\only<5>{
+\input{kruskal_plot/graph4.tex}
+}
+\end{column}%
+\hfill%
+\begin{column}{.62\textwidth}
+    \only<1>{$M(E,W)$ Matroid, $w$ Gewichtung. $A_0 = \emptyset$, $X_0 = E$.
+        }
+        \only<2->{
+            \begin{algorithm}
+                \begin{algtab*}
+                    \algwhile{$X_i \neq \emptyset$} $a_{i}\in X_{i-1}$ mit minimalem Gewicht.\\
+                    $A_{i} = A_{i-1} \cup \{a_{i}\}$\\
+                    $X_{i} = \{e\in E\setminus A_{i}|A_{i}\cup\{e\}\in W\}$\\
+                    $i++$
+                \end{algtab*}
+            \end{algorithm}
+        }
+        \ \\In unserem Beispiel:\\
+        \only<1>{$i = 0$\\ $\textcolor{red}{A_0 = \emptyset}$\\$X_0 = \{(a,b), (b,c), (a,c), (a,e), (c,e), (e,d)\}$}
+        \only<2>{$i = 1$\\ $\textcolor{red}{A_1 = \{(a,b)\}}$\\ $X_1 = \{(b,c), (a,c), (a,e), (c,e), (e,d)\}$}
+        \only<3>{$i = 2$\\ $\textcolor{red}{A_2 = \{(a,b), (a,c)\}}$\\ $X_2 = \{(a,e), (c,e), (e,d)\}$}
+        \only<4>{$i = 3$\\ $\textcolor{red}{A_3 = \{(a,b), (a,c), (e,d)\}}$\\ $X_3 = \{(a,e), (c,e)\}$}
+        \only<5>{$i = 4$\\ $\textcolor{red}{A_4 = \{(a,b), (a,c), (e,d), (c,e)\}}$\\ $X_4 = \emptyset$}
+    \end{column}%
+\end{columns}
+\end{frame}

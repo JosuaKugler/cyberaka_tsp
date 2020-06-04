@@ -1,0 +1,15 @@
+\begin{frame}
+    \frametitle{Greedy-Algorithmus auf gewichtetem Matroid - Korrektheitsbeweis}
+\onslide<1-5> {
+    \begin{proof}
+    		\begin{itemize}
+    			\item<1-> Sei $A = \{ a_{1},...,a_{r}\}$ die erhaltene Menge.
+    			\item<2-> Axiom 3 $\implies$ $A$ ist Basis.
+    			\item<3-> Konstruktion und Axiom 2 $\implies$ $w(a_{1}) \leq ... \leq w(a_{r})$. 
+    			\item<4-> Angenommen $B = \{ b_{1},...,b_{r}\}$ wäre eine Basis mit $w(B) < w(A)$ mit $w(b_{1}) \leq ... \leq w(b_{r})$. Dann existiert minimaler Index $i$ mit $w(b_{i}) < w(a_{i})$ wobei $i \geq 2$ gilt. 
+    			\item<5-> $A_{i-1} = \{ a_{1},...,a_{i-1}\}$, $B_{i} = \{ b_{1},...,b_{i}\}$ unabhängige Mengen. Axiom 3 $\implies$ $\exists$ $b_{j} \in B_{i} \setminus A_{i-1}$ sodass $A_{i-1} \cup \{ b_{j}\} \in U$. Nun $w(b_{j}) \leq w(b_{i}) < w(a_{i}) \implies$ Widerspruch.
+    		\end{itemize}
+    		
+    \end{proof}
+}
+\end{frame}

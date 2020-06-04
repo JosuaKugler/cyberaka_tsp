@@ -1,0 +1,121 @@
+\begin{frame}[t]
+\frametitle{Grundlegende Eigenschaften eines Baums}
+\begin{lemma}
+        Ein Baum ist minimal zusammenhängend und maximal kreisfrei.
+\end{lemma}
+\only<2->{
+\begin{proof}
+    \vspace*{-0.6cm}
+}%
+\begin{columns}
+    \begin{column}{0.58\textwidth}
+        \begin{itemize}
+            \item<2-> Kante entfernen 
+            \begin{itemize}
+                \item[$\implies$]<3-> Pfad unterbrochen 
+                \item[$\overset{\mathclap{\text{Lemma 1}}}{\implies}$]<4-> nicht mehr zusammenhängend
+            \end{itemize}
+            \item<5-> Kante hinzufügen 
+            \begin{itemize}
+                \item[$\implies$]<6-> neuer Weg 
+                \item[$\overset{\mathclap{\text{Lemma 1}}}{\implies}$]<7-> Kreis
+            \end{itemize}
+        \end{itemize}
+    \end{column}
+    \begin{column}{0.25\textwidth}
+        \only<2> {
+        \begin{figure}
+                \begin{tikzpicture}[scale=1, auto,swap]
+            % Draw a 7,11 network
+            % First we draw the vertices
+            \foreach \pos/\name in {{(0,2)/a}, {(0,0)/b}, {(1,-1)/c},
+                                    {(2,0)/d}, {(2,2)/e}}
+                \node[vertex] (\name) at \pos {$\name$};
+            % Connect vertices with edges and draw weights
+            \foreach \source/ \dest /\weight in {b/a/1, c/b/2,
+                                                c/d/3, d/e/5}
+                \path[edge] (\source) -- node[font=\small] {} (\dest);
+            
+                \end{tikzpicture}
+        \end{figure}
+        }
+
+        \only<3-4> {
+        \begin{figure}
+                \begin{tikzpicture}[scale=1, auto,swap]
+            % Draw a 7,11 network
+            % First we draw the vertices
+            \foreach \pos/\name in {{(0,2)/a}, {(0,0)/b}, {(1,-1)/c},
+                                    {(2,0)/d}, {(2,2)/e}}
+                \node[vertex] (\name) at \pos {$\name$};
+            % Connect vertices with edges and draw weights
+            \foreach \source/ \dest /\weight in {b/a/1, c/b/2,
+                                                d/e/5}
+                \path[edge] (\source) -- node[font=\small] {} (\dest);
+            
+                \end{tikzpicture}
+        \end{figure}
+        }
+
+        \only<5> {
+        \begin{figure}
+                \begin{tikzpicture}[scale=1, auto,swap]
+            % Draw a 7,11 network
+            % First we draw the vertices
+            \foreach \pos/\name in {{(0,2)/a}, {(0,0)/b}, {(1,-1)/c},
+                                    {(2,0)/d}, {(2,2)/e}}
+                \node[vertex] (\name) at \pos {$\name$};
+            % Connect vertices with edges and draw weights
+            \foreach \source/ \dest /\weight in {b/a/1, c/b/2,
+                                                c/d/3, d/e/5}
+                \path[edge] (\source) -- node[font=\small] {} (\dest);
+            
+                \end{tikzpicture}
+        \end{figure}
+        }
+        \only<6> {
+        \begin{figure}
+                \begin{tikzpicture}[scale=1, auto,swap]
+            % Draw a 7,11 network
+            % First we draw the vertices
+            \foreach \pos/\name in {{(0,2)/a}, {(0,0)/b}, {(1,-1)/c},
+                                    {(2,0)/d}, {(2,2)/e}}
+                \node[vertex] (\name) at \pos {$\name$};
+            % Connect vertices with edges and draw weights
+            \foreach \source/ \dest /\weight in {b/a/1, c/b/2,
+                                                c/d/3, d/e/5,a/e/1}
+                \path[edge] (\source) -- node[font=\small] {} (\dest);
+            
+                \end{tikzpicture}
+        \end{figure}
+        }
+        \only<7> {
+        \begin{figure}
+                \begin{tikzpicture}[scale=1, auto,swap]
+            % Draw a 7,11 network
+            % First we draw the vertices
+            \foreach \pos/\name in {{(0,2)/a}, {(0,0)/b}, {(1,-1)/c},
+                                    {(2,0)/d}, {(2,2)/e}}
+                \node[vertex] (\name) at \pos {$\name$};
+            % Connect vertices with edges and draw weights
+            \foreach \source/ \dest /\weight in {b/a/1, c/b/2,
+                                                c/d/3, d/e/5, e/a/6}
+                \path[edge] (\source) -- node[font=\small] {} (\dest);
+            
+            \begin{pgfonlayer}{background}
+                \foreach \source / \dest in {b/a,c/b,d/c,d/e,e/a}
+                    \path[selected edge] (\source.center) -- (\dest.center);
+                    
+            \end{pgfonlayer}
+                \end{tikzpicture}
+        \end{figure}
+        }
+    \end{column}
+\begin{column}{0.13\textwidth}
+    \hspace*{2cm}
+\end{column}
+\end{columns}
+\only<2->{
+\end{proof}
+}
+\end{frame}

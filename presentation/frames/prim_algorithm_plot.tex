@@ -1,0 +1,57 @@
+%visualizegraphalgorithm("prim",
+%       "prim_plot", 
+%       ["a", "b", "c", "d", "e"], 
+%       [
+%       ("a", "b", 1), 
+%       ("b", "c", 2), 
+%       ("a", "c", 1), 
+%       ("a", "d", 2), 
+%       ("a", "e", 3), 
+%       ("b", "e", 4),
+%       ("e", "a", 5)
+%], 0.5)
+%END
+\begin{frame}
+    \begin{columns}[T] % align columns
+        \begin{column}{.36\textwidth}
+\only<1>{
+\input{prim_plot/graph0.tex}
+}
+\only<2>{
+\input{prim_plot/graph1.tex}
+}
+\only<3>{
+\input{prim_plot/graph2.tex}
+}
+\only<4>{
+\input{prim_plot/graph3.tex}
+}
+\only<5>{
+\input{prim_plot/graph4.tex}
+}
+        \end{column}%
+\hfill%
+    \begin{column}{.62\textwidth}
+        \only<1>{
+            \begin{algorithm}
+                \begin{algtab*}
+                        $\textcolor{red!70}{V'} = \{\textcolor{red!70}{v}\}$ \\
+                \end{algtab*}
+            \end{algorithm}
+        }
+        \only<2->{
+            \begin{algorithm}
+                \begin{algtab*}
+                    \algwhile{$\textcolor{red!70}{|V'|} < |V|$}
+                            Wähle
+                            $$e \in \{(v,u)\in E| v \in \textcolor{red!70}{V'}, u \notin \textcolor{red!70}{V'}\},$$ mit $w(e)$ minimimal.\\
+                            Setze dann
+                            $$E = E\setminus\{e\},$$ 
+                            $$E' = \textcolor{red}{E'}\cup \{\textcolor{red}{e}\},$$
+                            $$V' = \textcolor{red!70}{V'} \cup \{\textcolor{red!70}{w}\}$$ 
+                \end{algtab*}
+            \end{algorithm}
+        }
+    \end{column}%
+\end{columns}
+\end{frame}

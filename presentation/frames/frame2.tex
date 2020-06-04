@@ -1,0 +1,111 @@
+\begin{frame}
+    \frametitle{Grundlegende Definitionen}
+
+\begin{columns}
+\begin{column}{0.58\textwidth}
+
+\only<1-3> {
+    \begin{definition}[Kreis]
+        Ist $(v_1, \dots, v_{n-1})$ mit $n > 1$ ein Pfad, so heißt $(v_0, \dots, v_{n-1}, v_0)$ Kreis.
+    \end{definition}
+}
+\only<3>{
+    \begin{definition}
+        Einen Graphen ohne Kreise nennt man \textbf{azyklisch}.
+    \end{definition}
+}
+
+\only<4->{
+    \begin{definition}[Grad]
+        %Sei $v\in V$ ein Knoten in einem Graphen $G = (V,E)$. Dann heißt $\# \{e \in E| v \in e\}$ der Grad von $v$.
+        $d(v) = |\{e \in E| v \in e\}|$
+    \end{definition}
+    \begin{lemma}
+        Die Anzahl der Knoten mit ungeradem Grad ist gerade.
+    \end{lemma}
+}
+
+\end{column}
+\begin{column}{0.43\textwidth}
+
+    \only<1> {
+    \begin{figure}
+        \begin{tikzpicture}[scale=1.3, auto,swap]
+        % First we draw the vertices
+        \foreach \pos/\name in {{(0,2)/a}, {(0,0)/b}, {(1,-1)/c},
+                                {(2,0)/d}, {(2,2)/e}}
+        \node[vertex] (\name) at \pos {$\name$};
+        % Connect vertices with edges and draw weights
+        \foreach \source/ \dest /\weight in {b/a/1, c/b/2,
+                                            c/d/3, d/e/5, e/a/6}
+        \path[edge] (\source) -- node[font=\small] {} (\dest);
+        \end{tikzpicture}
+    \end{figure}
+    }
+
+    \only<2> {
+    \begin{figure}
+        \begin{tikzpicture}[scale=1.3, auto,swap]
+        % Draw a 7,11 network
+        % First we draw the vertices
+        \foreach \pos/\name in {{(0,2)/a}, {(0,0)/b}, {(1,-1)/c},
+                                {(2,0)/d}, {(2,2)/e}}
+            \node[vertex] (\name) at \pos {$\name$};
+        % Connect vertices with edges and draw weights
+        \foreach \source/ \dest /\weight in {b/a/1, c/b/2,
+                                            c/d/3, d/e/5, e/a/6}
+            \path[edge] (\source) -- node[font=\small] {} (\dest);
+            \begin{pgfonlayer}{background}
+                \foreach \source / \dest in {b/a,c/b,d/c,d/e,e/a}
+                \path[selected edge] (\source.center) -- (\dest.center);   
+            \end{pgfonlayer}
+        \end{tikzpicture}
+    \end{figure}
+    }
+
+    
+
+\only<3> {
+\begin{figure}
+		\begin{tikzpicture}[scale=1.3, auto,swap]
+    % Draw a 7,11 network
+    % First we draw the vertices
+    \foreach \pos/\name in {{(0,2)/a}, {(0,0)/b}, {(1,-1)/c},
+                            {(2,0)/d}, {(2,2)/e}}
+        \node[vertex] (\name) at \pos {$\name$};
+    % Connect vertices with edges and draw weights
+    \foreach \source/ \dest /\weight in {b/a/1, c/b/2,
+                                         c/d/3, d/e/5}
+        \path[edge] (\source) -- node[font=\small] {} (\dest);
+    
+		\end{tikzpicture}
+\end{figure}
+}
+
+\only<4>{
+\begin{figure}
+		\begin{tikzpicture}[scale=1.3, auto,swap]
+    % Draw a 7,11 network
+    % First we draw the vertices
+    \foreach \pos/\name in {{(0,0)/a}, {(1,1)/b}, {(3,1)/c},
+                            {(0,-2)/d}, {(2,0)/e}, {(1,-1)/f}, {(3,-1)/g}};
+   	\node[vertex] (a) at (0,0) {$2$};
+   	\node[vertex] (b) at (1,1) {$4$};
+   	\node[vertex] (c) at (3,1) {$2$};
+   	\node[vertex] (d) at (0,-2) {$4$};
+   	\node[vertex] (e) at (2,0) {$4$};
+   	\node[vertex] (f) at (1,-1) {$3$};
+   	\node[vertex] (g) at (3,-1) {$3$};
+   	
+    % Connect vertices with edges and draw weights
+    \foreach \source/ \dest /\weight in {b/a/1, c/b/2,d/a/4,d/b/2,
+                                         e/b/3, e/c/5, d/g/2,
+                                         f/d/4,f/e/1,
+                                         g/e/3,g/f/5}
+        \path[edge] (\source) -- node[font=\small] {} (\dest);
+	\end{tikzpicture}
+\end{figure}
+}
+\end{column}
+\end{columns}
+\end{frame}

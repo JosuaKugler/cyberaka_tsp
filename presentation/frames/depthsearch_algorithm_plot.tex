@@ -1,0 +1,59 @@
+%visualizegraphalgorithm("depthsearch",
+%       "depthsearch_plot", 
+%       ["a", "b", "c", "d", "e"], 
+%       [
+%       ("a", "b"), 
+%       ("b", "c"), 
+%       ("a", "c"), 
+%       ("a", "d"), 
+%       ("a", "e"), 
+%       ("b", "e"),
+%       ("e", "a")
+%],
+%1.0)
+%END
+\begin{frame}
+    \begin{columns}[T] % align columns
+        \begin{column}{.4\textwidth}
+\only<1>{
+\input{depthsearch_plot/graph0.tex}
+}
+\only<2>{
+\input{depthsearch_plot/graph1.tex}
+}
+\only<3>{
+\input{depthsearch_plot/graph2.tex}
+}
+\only<4>{
+\input{depthsearch_plot/graph3.tex}
+}
+\only<5>{
+\input{depthsearch_plot/graph4.tex}
+}
+\only<6>{
+\input{depthsearch_plot/graph5.tex}
+}
+\end{column}%
+\hfill%
+    \begin{column}{.58\textwidth}
+        \only<1>{
+            \begin{algorithm}
+                \begin{algtab*}
+                    Markiere $\textcolor{red!70}{v}$
+                \end{algtab*}
+            \end{algorithm}
+        }
+        \only<2->{
+            \begin{algorithm}
+                \begin{algtab*}
+                    \algwhile{$\exists$ unmarkierte Knoten}
+                \algif{$\exists$ unmarkierte Kanten $e = (\textcolor{red!70}{v},w)$}
+                    \algifthenelse{$w$  markiert}{$E = E\setminus\{e\}$}{markiere $\textcolor{red}{e}, w$. Setze $\textcolor{red!70}{v} = w$.}
+                \algelse
+                    Setze $\textcolor{red!70}{v}$ auf den zuletzt markierten Knoten.  
+                \end{algtab*}
+            \end{algorithm}
+        }
+    \end{column}%
+\end{columns}
+\end{frame}

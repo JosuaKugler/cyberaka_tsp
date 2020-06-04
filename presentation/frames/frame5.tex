@@ -1,0 +1,58 @@
+\begin{frame}
+
+\frametitle{Definition Baum}
+
+    \frametitle{Allgemeine Definitionen}
+\only<1,3>{
+    \begin{definition}
+        Ein Graph $G = (V,E)$ mit einer Funktion $w: E \to \mathbb{R}$ heißt gewichteter Graph.
+    \end{definition}
+}
+\only<2> {
+	\begin{figure}
+		\begin{tikzpicture}[scale=1.8, auto,swap]
+    % Draw a 7,11 network
+    % First we draw the vertices
+    \foreach \pos/\name in {{(0,0)/a}, {(1,1)/b}, {(3,1)/c},
+                            {(0,-2)/d}, {(2,0)/e}, {(1,-1)/f}, {(3,-1)/g}}
+        \node[vertex] (\name) at \pos {$\name$};
+    % Connect vertices with edges and draw weights
+    \foreach \source/ \dest /\weight in {b/a/1, c/b/2,d/a/4,
+                                         e/b/3,
+                                         f/d/4,
+                                         g/e/3}
+        \path[edge] (\source) -- node[font=\small] {$\weight$} (\dest);
+    
+        
+	\end{tikzpicture}
+	\end{figure}
+}
+\only<3>{
+    \begin{definition}
+        Der minimale Spannbaum $G' = (V, E')$ eines gewichteten, zusammenhängenden Graphen $G = (V,E)$ ist ein aufspannender Baum, für den \[\sum_{e \in E'} w(e)\] minimal ist.
+    \end{definition}
+}
+\only<4>{
+	\begin{figure}
+		\begin{tikzpicture}[scale=1.8, auto,swap]
+    % Draw a 7,11 network
+    % First we draw the vertices
+    \foreach \pos/\name in {{(0,0)/a}, {(1,1)/b}, {(3,1)/c},
+                            {(0,-2)/d}, {(2,0)/e}, {(1,-1)/f}, {(3,-1)/g}}
+        \node[vertex] (\name) at \pos {$\name$};
+    % Connect vertices with edges and draw weights
+    \foreach \source/ \dest /\weight in {b/a/1, c/b/2,d/a/4,d/b/9,
+                                         e/b/3, e/c/42, d/g/15,
+                                         f/d/4,f/e/7,
+                                         g/e/3,g/f/5}
+        \path[edge] (\source) -- node[font=\small] {$\weight$} (\dest);
+    
+     \begin{pgfonlayer}{background}
+        \foreach \source / \dest in {b/a,c/b,d/a,e/b,f/d,g/e}
+            \path[selected edge] (\source.center) -- (\dest.center);
+            
+    \end{pgfonlayer}
+\end{tikzpicture}
+	\end{figure}
+}
+\end{frame}

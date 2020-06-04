@@ -1,0 +1,28 @@
+\begin{frame}
+    \frametitle{Matroide und Graphen}
+    Sei $W \subseteq P(E)$ die Familie der Kantenmenge aller Wälder eines Graphen $G = (V, E)$.
+\onslide<1->{
+    \begin{lemma}
+    		Ist $G = (V, E)$ Graph, so ist $M = (E, W)$ ein Matroid.
+    \end{lemma}
+}   
+\only<2-3>{
+    \begin{proof}
+        \begin{itemize}
+            \item<2-3> Axiom 1
+            \item<3> Axiom 2
+        \end{itemize}
+    \end{proof}
+}
+\onslide<4-5>{
+	\begin{proof}
+		\begin{itemize}
+			\item<4-> Wälder $W = (V, A)$, $W' = (V, B)$ mit $\# B = \# A + 1$. Zusammenhangskomponenten $T_{1},..., T_{m}$, Eckenmengen $V_{1},...,V_{m}$, \\ Kantenmengen $A_{1},...,A_{m}$.
+			\item<5-> Nun: $\# A_{i} = \# V_{i} - 1$, \ $V = V_{1} \cup ... \cup V_{m}$, \ $A = A_{1} \cup ... \cup A_{m}$. \\ $\# B > \# A \implies$ $\exists$ Kante $k \in B$, die $V_{s}$, $V_{t}$ verbindet. \\
+		Dann ist $W'' = (V, A \cup {k})$ Wald.
+		\end{itemize}
+		
+		
+	\end{proof}
+}
+\end{frame}

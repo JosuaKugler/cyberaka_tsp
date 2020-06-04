@@ -1,0 +1,69 @@
+\documentclass{beamer}
+\usepackage{marvosym}
+\usepackage{amsfonts,amsmath,amssymb,amsthm, mathtools}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{alg}
+\usepackage{tikz, pgf}
+\usepackage[font=scriptsize,labelfont=bf]{caption}
+\usepackage{verbatim}
+\usepackage{comment}
+\usetikzlibrary{arrows,shapes}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\theoremstyle{definition}
+\newtheorem{korollar}{Korollar}
+
+\mode<presentation>
+{
+  \usetheme{Ilmenau}
+  \usecolortheme{beaver}
+  \usefonttheme{professionalfonts}
+%  \setbeamercolor{palette primary}{fg=white,bg=black}
+  \setbeamercovered{transparent=0}
+  \setbeamertemplate{navigation symbols}{}%remove navigation symbols
+}
+\author{Amelie Koch und Josua Kugler}
+\title{Travelling Salesman Problem}
+\date{CdE Cyberaka 2020}
+
+\begin{document}
+\tikzstyle{vertex}=[circle,fill=black!25,minimum size=20pt,inner sep=0pt, draw = none]
+\tikzstyle{selected vertex} = [vertex, fill=red!24, draw = none]
+\tikzstyle{edge} = [draw,thick,-]
+\tikzstyle{selected edge} = [draw,-,red!50,line width=5pt]
+\graphicspath{{images/}}
+\maketitle
+\input{frames/frameAnfang}
+  \section*{Grundlagen}
+  \input{frames/frame1}
+  \input{frames/frame2}
+  \input{frames/frame3}
+  \input{frames/frame4_1}
+  \input{frames/frame4_2}
+  \input{frames/frame4_3}
+  \input{frames/frame5}
+  \section*{Kruskal-Algorithmus}
+  \input{frames/frame204}
+  \input{frames/kruskal_algorithm_plot}
+  \section*{Matroide}
+  \input{frames/frame201}
+  \input{frames/frame_matroid_vr}
+  \input{frames/frame202}
+  \input{frames/frame_das_matroid_vw}
+  \input{frames/frame203}
+  \input{frames/frame205}
+  \input{frames/kruskal_matroid.tex}
+  \input{frames/frame206}
+  \section*{Christofides Heuristik}
+  \input{frames/christofides_overview.tex}
+  \input{frames/christofides_01.tex}
+  \input{frames/christofides_02.tex}
+  \input{frames/christofides_03.tex}
+  \input{frames/christofides_04.tex}
+  \input{frames/christofides_overview.tex}
+  \input{frames/frame_ausblick}
+  \end{document}

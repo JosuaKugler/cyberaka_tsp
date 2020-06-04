@@ -1,0 +1,17 @@
+
+\begin{tikzpicture}[>=latex,line join=bevel,scale=0.75, auto]
+%%
+\node (a) at (125.0bp,279.0bp) [draw,ellipse,vertex] {$a$};
+  \node (b) at (27.0bp,192.0bp) [draw,ellipse,vertex] {$b$};
+  \node (c) at (70.0bp,105.0bp) [draw,ellipse,vertex] {$c$};
+  \node (e) at (125.0bp,18.0bp) [draw,ellipse,vertex] {$e$};
+  \node (d) at (180.0bp,105.0bp) [draw,ellipse,vertex] {$d$};
+  \draw [red,edge] (a) ..controls (92.968bp,261.12bp) and (79.626bp,252.44bp)  .. (69.0bp,243.0bp) .. controls (57.512bp,232.79bp) and (46.543bp,219.29bp)  .. node {$1$} (b);
+  \draw [red,edge] (a) ..controls (115.58bp,255.68bp) and (113.09bp,249.09bp)  .. (111.0bp,243.0bp) .. controls (96.429bp,200.44bp) and (82.078bp,149.5bp)  .. node {$1$} (c);
+  \draw [black,edge] (a) ..controls (125.0bp,212.73bp) and (125.0bp,84.232bp)  .. node {$5$} (e);
+  \draw [gray,edge] (b) ..controls (43.034bp,159.56bp) and (53.989bp,137.39bp)  .. node[color = gray] {$2$} (c);
+  \draw [red,edge] (c) ..controls (90.344bp,72.82bp) and (104.7bp,50.112bp)  .. node {$3$} (e);
+  \draw [red,edge] (d) ..controls (159.66bp,72.82bp) and (145.3bp,50.112bp)  .. node {$2$} (e);
+%
+\end{tikzpicture}
+

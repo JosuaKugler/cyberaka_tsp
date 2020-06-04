@@ -1,0 +1,10 @@
+\begin{frame}
+    \frametitle{Algorithmus von Kruskal in Matroidsprache}
+    \begin{theorem}
+    		$M = (E, W)$ Matroid mit Gewichtsfunktion $w: E \rightarrow \mathbb{R}$. Algorithmus liefert minimalen Spannbaum:
+    		\begin{enumerate}
+    			\item Sei $A_{0} = \emptyset \in W$.
+    			\item Ist $A_{i} = \{ a_{1},...,a_{i}\} \subseteq E$, so sei $X_{i} = \{ e \in E\setminus A_{i} \ | \ A_{i} \cup \{ e\} \in W \}$. Falls $X_{i} = \emptyset$, so ist $A_{i}$ gesuchte Basis. Andernfalls wähle ein $a_{i+1} \in X_{i}$ mit minimalem Gewicht, und setze $A_{i + 1} = A_{i} \cup \{ a_{i+1}\}$. \\ Iteriere (2).
+    		\end{enumerate}
+    \end{theorem}
+\end{frame}
